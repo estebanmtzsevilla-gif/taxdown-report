@@ -206,7 +206,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0,102,204,0.03) 0%, rgba(173,226,32,0.03) 100%);
+  background: rgba(0, 102, 204, 0.02);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
@@ -276,7 +276,7 @@ body {
 
 .insight-banner {
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, rgba(0,102,204,0.05) 0%, rgba(10,165,205,0.03) 100%);
+  background: rgba(0, 102, 204, 0.05);
   border-radius: var(--radius-md);
   padding: var(--spacing-md) var(--spacing-lg);
   border-left: 4px solid var(--science-blue);
@@ -371,7 +371,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, var(--bg-dark) 100%);
+  background: var(--bg-dark);
   padding: var(--spacing-md);
 }
 
@@ -523,7 +523,7 @@ h2 {
 
   color: var(--text-primary);
 
-  background: linear-gradient(120deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%);
+  background: transparent;
 
 }
 
@@ -987,7 +987,7 @@ body {
 .bubble-landscape-section.active .orb-taxdown {
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle at 30% 30%, var(--inch-worm), #8BC220) !important;
+  background: var(--inch-worm) !important;
   opacity: 1 !important;
   transform: translate(-50%, -50%) scale(1);
   box-shadow: none !important;
@@ -1234,10 +1234,10 @@ body {
 .stat-label { color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
 /* GRADIENTES SUTILES DE FONDO */
-.gradient-blue { background: linear-gradient(135deg, var(--bg-dark), rgba(0, 102, 204, 0.15)); }
-.gradient-red { background: linear-gradient(135deg, var(--bg-dark), rgba(42, 42, 42, 0.15)); }
-.gradient-green { background: linear-gradient(135deg, var(--bg-dark), rgba(10, 165, 205, 0.15)); }
-.gradient-purple { background: linear-gradient(135deg, var(--bg-dark), rgba(219, 238, 126, 0.15)); }
+.gradient-blue { background: rgba(0, 102, 204, 0.1); }
+.gradient-red { background: rgba(42, 42, 42, 0.1); }
+.gradient-green { background: rgba(10, 165, 205, 0.1); }
+.gradient-purple { background: rgba(219, 238, 126, 0.1); }
 
 /* BARRA DE PROGRESO (Visualización simple dentro de tarjeta) */
 .progress-bar-container { margin-top: auto; }
@@ -1451,47 +1451,38 @@ body {
 /* --- ESTILOS DE COLOR (SIN FOTOS) --- */
 
 /* 1. TRAMA DE PUNTOS (PATTERN) */
-.panel-pattern {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  opacity: 0.1;
-  /* Crea un patrón de puntos moderno con CSS puro */
-  background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px);
-  background-size: 24px 24px; 
-  z-index: 0;
-}
 
 /* 2. GRADIENTES POR FASE */
 /* Azul Science (Tech/Trust) */
 .panel-blue {
-  background: linear-gradient(135deg, #004d99 0%, #003366 100%);
+  background: var(--science-blue);
 }
 .panel-blue.active {
-  background: linear-gradient(135deg, var(--science-blue) 0%, #004d99 100%);
+  background: var(--science-blue);
 }
 
 /* Verde Inch Worm (Growth) */
 .panel-green {
-  background: linear-gradient(135deg, #8BC220 0%, #6fa018 100%);
+  background: var(--inch-worm);
 }
 .panel-green.active {
-  background: linear-gradient(135deg, var(--inch-worm) 0%, #8BC220 100%);
+  background: var(--inch-worm);
 }
 
 /* Sky Blue (Scale) */
 .panel-purple {
-  background: linear-gradient(135deg, #0888a5 0%, #06647a 100%);
+  background: var(--sky-blue);
 }
 .panel-purple.active {
-  background: linear-gradient(135deg, var(--sky-blue) 0%, #0888a5 100%);
+  background: var(--sky-blue);
 }
 
 /* Manz (Innovation) */
 .panel-amber {
-  background: linear-gradient(135deg, #c5db65 0%, #a8c052 100%);
+  background: var(--manz);
 }
 .panel-amber.active {
-  background: linear-gradient(135deg, var(--manz) 0%, #c5db65 100%);
+  background: var(--manz);
 }
 
 /* --- ELEMENTOS INTERNOS (Igual que antes pero ajustados) --- */
@@ -1501,7 +1492,7 @@ body {
   padding: 30px;
   display: flex; align-items: center; gap: 15px;
   transition: transform 0.4s ease;
-  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent); /* Sombra sutil texto */
+  background: rgba(0, 0, 0, 0.2); /* Sombra sutil texto */
 }
 
 /* Badge circular del T1, T2... */
@@ -1683,7 +1674,7 @@ body {
   .filter-icon { filter: grayscale(1) brightness(2); }
   
   /* Background Gradients */
-  .bg-gradient-dark-blue { background: linear-gradient(135deg, var(--midnight-blue) 0%, #243447 100%); }
+  .bg-gradient-dark-blue { background: var(--midnight-blue); }
   
   /* Bento Card Initial State */
   .bento-card-init { margin-top: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; opacity: 0; transform: translateY(30px); }
@@ -1729,7 +1720,7 @@ strong.text-green { color: var(--emerald-green); }
 
 
 /* Vision Card Gradient */
-.vision-card-gradient { background: linear-gradient(135deg, rgba(15, 212, 142, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%); }
+.vision-card-gradient { background: rgba(0, 102, 204, 0.03); }
 
 /* Final Slide */
 .bg-dark { background-color: var(--text-primary); color: white; }
