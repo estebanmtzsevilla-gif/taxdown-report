@@ -67,35 +67,13 @@ body {
   font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
   color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Mejorar contraste en slides */
-.slide {
-  background: var(--bg-primary);
-}
-
-.slide h1,
-.slide .display-xl,
-.slide .display-lg {
-  color: #ffffff;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-}
-
-.slide .text-body,
-.slide p {
-  color: #cbd5e1;
-}
-
-.slide .text-red {
-  color: #f87171;
-  text-shadow: 0 0 20px rgba(248, 113, 113, 0.3);
 }
 
 /* TÍTULOS GRANDES: Display - Estilo Vention */
@@ -509,24 +487,35 @@ path:hover, circle:hover {
 /* COLUMNA DERECHA: LA HISTORIA */
 
 .content-scroll {
+
   width: 50%;
+
   padding: 0 5%;
+
   position: relative;
+
   z-index: 2;
-  background: var(--bg-primary);
+
 }
 
 
 
 .step {
-  min-height: 90vh;
+
+  min-height: 90vh; /* Cada paso ocupa casi toda la pantalla */
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
-  opacity: 0.2;
+
+  opacity: 0.2; /* Los pasos inactivos se ven transparentes */
+
   transition: opacity 0.5s ease;
-  padding: 4rem 0; /* Aumentar padding vertical para más espacio */
-  gap: 2rem; /* Espacio entre elementos */
+
+  padding: 2rem 0;
+
 }
 
 
@@ -540,49 +529,36 @@ path:hover, circle:hover {
 
 
 .step .card {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: white;
   padding: 3rem;
   border-radius: var(--radius-card);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-left: 4px solid #ccc;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0,0,0,0.02);
+  border-left: 4px solid #ccc; /* Borde izquierdo más sutil */
   max-width: 500px;
-  margin: 2rem 0; /* Restaurar espaciado vertical */
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .step .card:hover {
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3);
-  transform: translateY(-4px);
-}
-
-/* Mejorar contraste de texto en cards */
-.step .card h2 {
-  color: #0f172a;
-  font-weight: 700;
-}
-
-.step .card p {
-  color: #1e293b;
-  font-weight: 400;
-}
-
-.step .card .big-num {
-  color: #0f172a;
-  font-weight: 800;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
 
 
-/* Colores de borde según el paso - más visibles */
-.step[data-step="1"] .card { border-left-color: #64748b; border-left-width: 5px; }
-.step[data-step="2"] .card { border-left-color: #3b82f6; border-left-width: 5px; }
-.step[data-step="3"] .card { border-left-color: #10b981; border-left-width: 5px; }
-.step[data-step="4"] .card { border-left-color: #8b5cf6; border-left-width: 5px; }
-.step[data-step="5"] .card { border-left-color: #8b5cf6; border-left-width: 5px; }
-.step[data-step="6"] .card { border-left-color: #10b981; border-left-width: 5px; }
+/* Colores de borde según el paso - paleta actualizada */
+
+.step[data-step="1"] .card { border-left-color: var(--text-secondary); }
+
+.step[data-step="2"] .card { border-left-color: var(--midnight-blue); }
+
+.step[data-step="3"] .card { border-left-color: var(--emerald-green); }
+
+.step[data-step="4"] .card { border-left-color: var(--electric-violet); }
+
+.step[data-step="5"] .card { border-left-color: var(--electric-violet); }
+
+.step[data-step="6"] .card { border-left-color: var(--emerald-green); }
 
 
 
@@ -632,23 +608,7 @@ h2 {
 
 
 
-p { 
-  font-size: 1.1rem; 
-  line-height: 1.7; 
-  color: #cbd5e1; 
-  font-weight: 400; 
-}
-
-/* Mejorar contraste en todas las secciones */
-.text-center h1,
-.text-center .display-xl {
-  color: #ffffff !important;
-}
-
-.text-center p,
-.text-center .text-body {
-  color: #cbd5e1 !important;
-}
+p { font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); font-weight: 400; }
 
 
 
