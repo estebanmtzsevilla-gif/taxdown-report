@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaxDown Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+
+  :root {
+
+    /* Paleta Refinada */
+
+    --bg-dark: #0f172a;
+
+    --card-glass: rgba(255, 255, 255, 0.95);
+
+    --text-primary: #1e293b;
+
+    --text-secondary: #64748b;
+
+    
+
+    /* Accents TaxDown */
+
+    --tax-green: #0fd48e;
+
+    --tax-blue: #1B2638;
+
+    --tax-purple: #885FFF;
+
+  }
+
+
+
+  * { box-sizing: border-box; }
+
+  
+
+  body {
+
+    margin: 0;
+
+    font-family: 'Albert Sans', sans-serif;
+
+    color: var(--text-primary);
+
+    background: #f8fafc;
+
+    overflow-x: hidden;
+
+  }
+
+
+
+  /* --- SCROLLYTELLING CONTAINER --- */
+
+  .scrolly-container {
+
+    position: relative;
+
+    /* Quitamos el display flex para usar capas */
+
+  }
+
+
+
+  /* 1. MAPA (FONDO FIJO) */
+
+  .map-sidebar {
+
+    position: sticky;
+
+    top: 0;
+
+    width: 100%;       /* Ocupa todo el ancho */
+
+    height: 100vh;     /* Ocupa todo el alto */
+
+    z-index: 1;        /* Al fondo */
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: radial-gradient(circle at center, #f1f5f9 0%, #e2e8f0 100%);
+
+    overflow: hidden;
+
+  }
+
+
+
+  #mexico-map {
+
+    width: 100%;
+
+    height: 100%;
+
+    max-height: 90vh;
+
+    /* Transición suave para zooms */
+
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+
+  }
+
+
+
+  /* Estilos SVG refinados */
+
+  path {
+
+    stroke: #fff;
+
+    stroke-width: 0.5px;
+
+    transition: all 0.6s ease;
+
+    vector-effect: non-scaling-stroke; /* El borde no engorda al hacer zoom */
+
+  }
+
+
+
+  /* 2. CONTENIDO (SOBRE EL MAPA) */
+
+  .content-scroll {
+
+    position: relative;
+
+    z-index: 10;       /* Por encima del mapa */
+
+    width: 100%;
+
+    margin-top: -100vh; /* Truco: subimos el contenido para que empiece sobre el mapa */
+
+    pointer-events: none; /* Dejar pasar clicks al mapa si no hay tarjeta */
+
+  }
+
+
+
+  .step {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center; /* Centrado vertical */
+
+    padding: 2rem 5%;
+
+    /* Alternar alineación: Pasos impares izq, pares der */
+
+  }
+
+  
+
+  .step:nth-child(odd) { justify-content: flex-start; }
+
+  .step:nth-child(even) { justify-content: flex-end; }
+
+
+
+  /* 3. TARJETAS GLASSMORPHIC */
+
+  .step .card {
+
+    background: var(--card-glass);
+
+    backdrop-filter: blur(12px); /* Efecto borroso detrás */
+
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    padding: 2.5rem;
+
+    border-radius: 24px;
+
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+
+    max-width: 450px;
+
+    pointer-events: auto; /* Reactivar clicks en la tarjeta */
+
+    
+
+    /* Animación de entrada */
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  }
+
+
+
+  /* Cuando el paso está activo (JS) */
+
+  .step.active .card {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+
+
+  /* Bordes de color para identidad */
+
+  .step[data-step="1"] .card { border-top: 6px solid var(--text-secondary); }
+
+  .step[data-step="2"] .card { border-top: 6px solid var(--tax-blue); }
+
+  .step[data-step="3"] .card { border-top: 6px solid var(--tax-green); }
+
+  .step[data-step="4"] .card { border-top: 6px solid #ef4444; } /* Rojo foco */
+
+  .step[data-step="5"] .card { border-top: 6px solid var(--tax-purple); }
+
+  .step[data-step="6"] .card { border-top: 6px solid var(--tax-green); }
+
+
+
+  /* Tipografía mejorada */
+
+  h2 {
+
+    font-size: 2.2rem;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.03em;
+
+    margin-bottom: 1rem;
+
+    color: var(--tax-blue);
+
+  }
+
+  
+
+  p {
+
+    font-size: 1.15rem;
+
+    line-height: 1.6;
+
+    color: #475569;
+
+  }
+
+
+
+  .big-num {
+
+    font-family: 'Albert Sans', sans-serif; /* Asegurar fuente */
+
+    font-variant-numeric: tabular-nums;
+
+    letter-spacing: -2px;
+
+  }
+
+
+
+  /* Leyenda flotante mejorada */
+
+  .demographic-legend {
+
+    position: fixed; /* Fijo en pantalla */
+
+    bottom: 40px;
+
+    right: 40px;     /* A la derecha */
+
+    left: auto;
+
+    transform: none;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+    z-index: 20;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.5s ease;
+
+  }
+
+  .demographic-legend.active { opacity: 1; pointer-events: auto; }
+
+
+
+  /* Estilos generales para slides estáticos */
+
+  .slide {
+
+    position: relative;
+
+    z-index: 10;
+
+    background: #fff; /* Asegurar fondo blanco para tapar mapa */
+
+    padding: 80px 5%;
+
+    min-height: 100vh;
+
+  }
+
+  
+
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  
+
+  /* GRID SYSTEM BÁSICO */
+
+  .grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+
+  .col-6 { grid-column: span 6; }
+
+  .col-12 { grid-column: span 12; }
+
+  
+
+  @media (max-width: 900px) {
+
+    .step { justify-content: center !important; }
+
+    .step .card { max-width: 100%; margin: 0 20px; }
+
+    .map-sidebar { height: 60vh; top: 20vh; opacity: 0.5; } /* Mapa más sutil en móvil */
+
+    .grid-12 { display: flex; flex-direction: column; }
+
+  }
+
+</style>
+</head>
+<body>
+  <!-- Contenido aquí -->
+</body>
+</html>
+
