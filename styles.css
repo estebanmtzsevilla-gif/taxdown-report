@@ -1,10 +1,9 @@
 :root {
   /* === COLORES BASE === */
-  --bg-paper: #FAFAFA;
-  --bg-color: #F8F8F8;
-  --bg-dark: #1A1A1A;
-  --card-bg: #FDFDFD;
-  --card-glass: rgba(253, 253, 253, 0.95);
+  /* Paleta simplificada a 3 backgrounds: claro, oscuro, tarjetas */
+  --bg-color: #F8F8F8;      /* Background principal (slides claros) */
+  --bg-dark: #1A1A1A;       /* Background oscuro (secciones scrolly) */
+  --card-bg: #FDFDFD;       /* Background de tarjetas y elementos */
 
   /* === TEXTOS === */
   --text-ink: #2A2A2A;
@@ -62,6 +61,15 @@
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
+
+  /* === ICON COLOR === */
+  --icon-deep-gray: #4A4A4A;
+}
+
+/* === LUCIDE ICON STYLING === */
+.lucide {
+  color: var(--icon-deep-gray);
+  stroke-width: 2;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -445,7 +453,7 @@ path:hover, circle:hover {
 
 .step .card {
   pointer-events: auto;
-  background: var(--card-glass);
+  background: rgba(253, 253, 253, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 2.5rem;
@@ -1156,7 +1164,7 @@ body {
 
 /* --- BENTO GRID SECTION --- */
 .bento-section {
-  background: #0f172a; /* Continuamos el tema dark */
+  background: var(--bg-dark); /* Continuamos el tema dark */
   padding: 100px 5%;
   min-height: 100vh;
   display: flex;
@@ -1226,15 +1234,15 @@ body {
 .stat-label { color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
 /* GRADIENTES SUTILES DE FONDO */
-.gradient-blue { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(59, 130, 246, 0.1)); }
-.gradient-red { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(220, 38, 38, 0.1)); }
-.gradient-green { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(16, 185, 129, 0.1)); }
-.gradient-purple { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(124, 58, 237, 0.1)); }
+.gradient-blue { background: linear-gradient(135deg, var(--bg-dark), rgba(0, 102, 204, 0.15)); }
+.gradient-red { background: linear-gradient(135deg, var(--bg-dark), rgba(42, 42, 42, 0.15)); }
+.gradient-green { background: linear-gradient(135deg, var(--bg-dark), rgba(10, 165, 205, 0.15)); }
+.gradient-purple { background: linear-gradient(135deg, var(--bg-dark), rgba(219, 238, 126, 0.15)); }
 
 /* BARRA DE PROGRESO (Visualización simple dentro de tarjeta) */
 .progress-bar-container { margin-top: auto; }
 .progress-bg { height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; margin: 10px 0; }
-.progress-fill { height: 100%; background: #ef4444; width: 0; transition: width 1.5s ease-out; }
+.progress-fill { height: 100%; background: var(--science-blue); width: 0; transition: width 1.5s ease-out; }
 .progress-bar-container .label { color: #fff; font-weight: bold; display: block; }
 .progress-bar-container .value { float: right; color: #ef4444; font-weight: bold; }
 
@@ -1258,7 +1266,7 @@ body {
 /* --- FRICTION & VALUE SECTION --- */
 .friction-value-section {
   padding: 80px 5%;
-  background: #fff;
+  background: var(--card-bg);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1283,8 +1291,8 @@ body {
   align-items: center; justify-content: center;
   font-size: 1.5rem;
 }
-.red-badge { background: #fee2e2; color: #ef4444; }
-.gray-badge { background: #f1f5f9; color: #64748b; }
+.red-badge { background: rgba(42, 42, 42, 0.1); color: var(--text-primary); }
+.gray-badge { background: rgba(90, 90, 90, 0.1); color: var(--text-secondary); }
 
 /* ESTILOS IZQUIERDA: OBSTÁCULOS (FRICCIÓN) */
 .obstacles-container {
@@ -1386,7 +1394,7 @@ body {
 
 /* --- GROWTH SECTION & ACCORDION (NO IMAGES VERSION) --- */
 .growth-section {
-  background: #0f172a; /* Fondo oscuro base */
+  background: var(--bg-dark); /* Fondo oscuro base */
   padding: 60px 0;
   min-height: 100vh;
   display: flex;
@@ -1632,14 +1640,14 @@ body {
   .text-white-80 { color: rgba(255,255,255,0.8); }
   
   /* Background Colors */
-  .bg-purple-400 { background: #A78BFA; }
-  .bg-green-400 { background: #0fd48e; }
-  .bg-amber-500 { background: #F59E0B; }
-  .bg-green-50 { background: #F0FDF4; }
+  .bg-purple-400 { background: var(--sky-blue); }
+  .bg-green-400 { background: var(--sky-blue); }
+  .bg-amber-500 { background: var(--manz); }
+  .bg-green-50 { background: rgba(173, 226, 32, 0.05); }
   .bg-white-10 { background: rgba(255,255,255,0.1); }
   
   /* Icon Badge Colors */
-  .badge-green { background: #F0FDF4; color: var(--accent-green); }
+  .badge-green { background: rgba(0, 102, 204, 0.1); color: var(--science-blue); }
   
 /* Font Sizes */
 .text-xs { font-size: 0.9rem; }
@@ -1690,7 +1698,7 @@ body {
   .icon-green { color: var(--accent-green); }
   
   /* Marker Colors */
-  .marker-orange { background: #F97316; }
+  .marker-orange { background: var(--manz); }
   
 /* Slide Number White */
 .slide-num-white { color: white; }
