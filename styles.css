@@ -1,80 +1,110 @@
 :root {
-  /* === PALETA EDITORIAL UNIFICADA === */
+  /* === PALETA VENTION-INSPIRED === */
   
-  /* Neutros Base - Papel Cálido */
-  --bg-paper: #F5F5F5;
-  --bg-color: #F5F5F5;
-  --card-bg: #FFFFFF;
-  --text-ink: #111111;
-  --text-primary: #111111;
-  --text-secondary: #555555;
-  --text-muted: #888888;
-
-  /* Paleta de Acento - Reducida y Cohesiva */
-  --primary-blue: #1B2638;      /* Azul oscuro principal */
-  --primary-green: #0D9488;     /* Verde esmeralda (más saturado) */
-  --accent-amber: #F59E0B;      /* Ámbar para highlights */
+  /* Fondos - Oscuro Moderno */
+  --bg-primary: #0a0e1a;        /* Fondo principal oscuro */
+  --bg-secondary: #0f172a;     /* Fondo secundario */
+  --bg-tertiary: #1e293b;       /* Fondo terciario */
+  --bg-paper: #ffffff;          /* Papel blanco para cards */
+  --bg-color: #0a0e1a;          /* Color base */
+  --card-bg: #ffffff;           /* Cards en modo claro */
+  --card-bg-dark: rgba(30, 41, 59, 0.6); /* Cards en modo oscuro */
+  
+  /* Texto */
+  --text-primary: #ffffff;       /* Texto principal (claro) */
+  --text-secondary: #94a3b8;    /* Texto secundario */
+  --text-muted: #64748b;        /* Texto atenuado */
+  --text-dark: #0f172a;         /* Texto oscuro para fondos claros */
+  --text-ink: #0f172a;
+  
+  /* Paleta de Acento - Vibrante y Moderna */
+  --primary-blue: #3b82f6;      /* Azul brillante */
+  --primary-green: #10b981;     /* Verde esmeralda */
+  --accent-amber: #f59e0b;      /* Ámbar */
+  --accent-purple: #8b5cf6;     /* Violeta */
+  --accent-cyan: #06b6d4;       /* Cyan */
+  --accent-pink: #ec4899;       /* Rosa */
   
   /* Legacy (compatibilidad) */
-  --midnight-blue: #1B2638;
-  --emerald-green: #0D9488;
-  --electric-violet: #7C3AED;   /* Violeta más sutil */
-  --accent-blue: #1B2638;
-  --accent-green: #0D9488;
-  --accent-red: #DC2626;        /* Rojo para alertas */
-  --accent-purple: #7C3AED;
+  --midnight-blue: #1e293b;
+  --emerald-green: #10b981;
+  --electric-violet: #8b5cf6;
+  --accent-blue: #3b82f6;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
   
-  /* Fondos */
+  /* Fondos adicionales */
   --bg-dark: #0f172a;
   --bg-light: #f8fafc;
   --bg-slate: #f1f5f9;
   
-  /* Sombras Editoriales */
-  --shadow-soft: 0px 2px 4px rgba(0, 0, 0, 0.05), 10px 20px 40px rgba(0, 0, 0, 0.15);
-  --shadow-card: 0 1px 2px rgba(0,0,0,0.05), 0 12px 24px rgba(0,0,0,0.12);
-  --shadow-hover: 0 2px 4px rgba(0,0,0,0.08), 0 16px 32px rgba(0,0,0,0.18);
+  /* Sombras Modernas - Suaves y Profundas */
+  --shadow-soft: 0px 2px 8px rgba(0, 0, 0, 0.1), 0px 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 40px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.2), 0 24px 64px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
   
-  /* Bordes Editoriales */
-  --border-light: rgba(0,0,0,0.08);
-  --border-divider: rgba(17, 17, 17, 0.1);
-  --radius-editorial: 3px;      /* Micro-rounded */
-  --radius-card: 4px;
-  --radius-lg: 8px;
-  --radius-md: 4px;
+  /* Bordes Modernos */
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-divider: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(59, 130, 246, 0.3);
+  --radius-modern: 8px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-editorial: 4px;
+  --radius-md: 8px;
+  
+  /* Gradientes */
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-secondary: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Albert Sans', sans-serif;
-  background-color: var(--bg-color);
+  font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
   color: var(--text-primary);
   overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* TÍTULOS GRANDES: Display */
+/* TÍTULOS GRANDES: Display - Estilo Vention */
 .display-xl {
   font-size: clamp(3rem, 5vw, 5rem);
   line-height: 1;
   letter-spacing: -0.04em;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .display-lg {
   font-size: clamp(2rem, 3.5vw, 3.5rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
-/* TÍTULO MEDIO: Jerarquía intermedia */
+/* TÍTULO MEDIO: Jerarquía intermedia - Estilo Vention */
 .heading-md {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
+  color: var(--text-primary);
 }
 
 /* TÍTULO CLEAN: Para cards y secciones */
@@ -83,28 +113,29 @@ body {
   font-size: 1.75rem;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  color: var(--text-ink);
+  color: var(--text-primary);
 }
 
-/* ETIQUETA: Definición máxima en tamaño mini */
+/* ETIQUETA: Definición máxima en tamaño mini - Estilo Vention */
 .label, .label-tech {
   font-weight: 700;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   margin-bottom: 1rem;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--text-secondary);
+  color: var(--primary-blue);
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
-/* CUERPO: Lectura fluida */
+/* CUERPO: Lectura fluida - Estilo Vention */
 .text-body, .body-text {
   font-size: 1rem;
   font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   letter-spacing: 0;
 }
 
@@ -131,6 +162,8 @@ body {
   padding: 40px 5%;
   display: flex;
   flex-direction: column;
+  background: var(--bg-primary);
+  position: relative;
   justify-content: center;
   border-bottom: 1px solid rgba(0,0,0,0.05);
   position: relative;
@@ -142,22 +175,43 @@ body {
 
 /* === ESTILO EDITORIAL: PAPER SHEET === */
 .card {
-  background: var(--card-bg);
-  border-radius: var(--radius-editorial);
+  background: var(--card-bg-dark);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-card);
   padding: 2.5rem;
-  border: 1px solid rgba(0,0,0,0.02); /* Borde casi invisible para definición */
+  border: 1px solid var(--border-light);
   
-  /* Sombra multicapa editorial (efecto papel flotante) */
+  /* Sombra moderna con glow sutil */
   box-shadow: var(--shadow-card);
   
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-glow), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover), var(--shadow-glow);
+  transform: translateY(-4px);
+  border-color: var(--border-glow);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .col-3 { grid-column: span 3; }
@@ -170,7 +224,14 @@ body {
 .col-12 { grid-column: span 12; }
 .row-2 { grid-row: span 2; }
 
-.slide-num { position: absolute; bottom: 20px; right: 20px; font-size: 0.8rem; color: #ccc; }
+.slide-num { 
+  position: absolute; 
+  bottom: 20px; 
+  right: 20px; 
+  font-size: 0.8rem; 
+  color: var(--text-muted);
+  opacity: 0.5;
+}
 
 /* MAP VISUALIZATION STYLES */
 .map-layout {
@@ -360,7 +421,8 @@ body {
 
   justify-content: center;
 
-      background: var(--bg-slate);
+      background: var(--bg-secondary);
+      background-image: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
 
   padding: 20px;
 
