@@ -1535,22 +1535,44 @@
           const rect = quote.getBoundingClientRect();
           const viewportHeight = window.innerHeight;
 
-          // Calculate how much of the quote is in view (0 to 1)
-          // 0 = just entering viewport, 1 = fully sticky at top
-          const scrollProgress = Math.max(0, Math.min(1, 1 - (rect.top / viewportHeight)));
+          // Check if the quote is still in the sticky range
+          // rect.bottom > 0 means the element hasn't scrolled completely past
+          const isInStickyRange = rect.top <= 0 && rect.bottom > viewportHeight;
 
-          // Calculate scale: grows from 1.0 to 1.3 as it scrolls into view
-          const scale = 1 + (scrollProgress * 0.3);
+          if (isInStickyRange) {
+            // Quote is sticky at top
+            const scrollProgress = Math.max(0, Math.min(1, 1 - (rect.top / viewportHeight)));
 
-          // Apply scale to all content elements
-          if (title) title.style.transform = `scale(${scale})`;
-          if (text) text.style.transform = `scale(${scale})`;
-          if (list) list.style.transform = `scale(${scale})`;
+            // Calculate scale: grows from 1.0 to 1.3 as it scrolls into view
+            const scale = 1 + (scrollProgress * 0.3);
 
-          // Activate fullscreen when sticky at top and almost fully scaled
-          if (rect.top <= 0 && scrollProgress > 0.8) {
-            quote.classList.add('fullscreen');
+            // Apply scale to all content elements
+            if (title) title.style.transform = `scale(${scale})`;
+            if (text) text.style.transform = `scale(${scale})`;
+            if (list) list.style.transform = `scale(${scale})`;
+
+            // Activate fullscreen when almost fully scaled
+            if (scrollProgress > 0.8) {
+              quote.classList.add('fullscreen');
+            } else {
+              quote.classList.remove('fullscreen');
+            }
+          } else if (rect.top > 0) {
+            // Quote hasn't reached top yet - approaching
+            const scrollProgress = Math.max(0, Math.min(1, 1 - (rect.top / viewportHeight)));
+            const scale = 1 + (scrollProgress * 0.3);
+
+            if (title) title.style.transform = `scale(${scale})`;
+            if (text) text.style.transform = `scale(${scale})`;
+            if (list) list.style.transform = `scale(${scale})`;
+
+            quote.classList.remove('fullscreen');
           } else {
+            // Quote has scrolled past (bottom <= viewportHeight) - reset
+            if (title) title.style.transform = `scale(1)`;
+            if (text) text.style.transform = `scale(1)`;
+            if (list) list.style.transform = `scale(1)`;
+
             quote.classList.remove('fullscreen');
           }
         }

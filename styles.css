@@ -1261,19 +1261,25 @@ body {
   transform-origin: center center;
 }
 
-/* Fullscreen state */
+/* Fullscreen state - stays sticky, just changes appearance */
 .sticky-quote.fullscreen {
-  position: fixed;
-  top: 0 !important;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2a5182 100%) !important;
+  padding: 4rem 5%;
+}
+
+.sticky-quote.fullscreen::before {
+  content: '';
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #1e3a5f 0%, #2a5182 100%) !important;
-  z-index: 1000;
-  margin: 0;
-  padding: 4rem 5%;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2a5182 100%);
+  z-index: -1;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .sticky-quote.fullscreen .hypothesis-title,
