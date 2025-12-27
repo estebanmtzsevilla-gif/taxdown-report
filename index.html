@@ -998,10 +998,8 @@
 </div> <!-- Cierre de scrolly-container -->
 
   <!-- SLIDE 5A: PANORAMA COMPETITIVO B2C -->
-  <section class="competitive-landscape-section competitive-parallax" id="competitive-b2c">
-
-    <!-- Background layer: Market breakdown -->
-    <div class="competitive-background">
+  <section class="competitive-landscape-section competitive-grow" id="competitive-b2c">
+    <div class="competitive-content">
       <div class="container">
         <!-- Header -->
         <div class="competitive-header">
@@ -1011,50 +1009,44 @@
         </div>
 
         <!-- Visual principal: Datos del mercado -->
-        <div class="market-visual">
-
-        <!-- Círculo central con dato destacado -->
-        <div class="market-circle">
-          <div class="circle-dashed">
-            <div class="circle-segment">
-              <div class="segment-inner"></div>
+        <div class="market-visual market-content">
+          <!-- Círculo central con dato destacado -->
+          <div class="market-circle">
+            <div class="circle-dashed">
+              <div class="circle-segment">
+                <div class="segment-inner"></div>
+              </div>
+              <div class="total-label">
+                <span class="big-num">69M</span>
+                <span class="label-text">total de<br>contribuyentes</span>
+              </div>
             </div>
-            <div class="total-label">
-              <span class="big-num">69M</span>
-              <span class="label-text">total de<br>contribuyentes</span>
+          </div>
+
+          <!-- Datos alrededor -->
+          <div class="market-data-left">
+            <div class="data-point">
+              <span class="data-number">57.6M</span>
+              <span class="data-label">no declaran</span>
+            </div>
+          </div>
+
+          <div class="market-data-right">
+            <div class="data-breakdown">
+              <div class="breakdown-item">
+                <span class="breakdown-number">11.4M</span>
+                <span class="breakdown-label">presentan declaración</span>
+              </div>
+              <div class="breakdown-detail">
+                <span class="detail-line"><strong>85-87%</strong> Declaran vía SAT</span>
+                <span class="detail-line"><strong>9-10%</strong> TaxDown</span>
+                <span class="detail-line"><strong>3-4%</strong> Contadores</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Datos alrededor -->
-        <div class="market-data-left">
-          <div class="data-point">
-            <span class="data-number">57.6M</span>
-            <span class="data-label">no declaran</span>
-          </div>
-        </div>
-
-        <div class="market-data-right">
-          <div class="data-breakdown">
-            <div class="breakdown-item">
-              <span class="breakdown-number">11.4M</span>
-              <span class="breakdown-label">presentan declaración</span>
-            </div>
-            <div class="breakdown-detail">
-              <span class="detail-line"><strong>85-87%</strong> Declaran vía SAT</span>
-              <span class="detail-line"><strong>9-10%</strong> TaxDown</span>
-              <span class="detail-line"><strong>3-4%</strong> Contadores</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      </div>
-    </div>
-
-    <!-- Foreground layer: Key insight (sticky) -->
-    <div class="competitive-foreground">
-      <div class="container">
+        <!-- Hipótesis clave - grows on scroll -->
         <div class="hypothesis-box competitive-insight">
           <h2 class="hypothesis-title">Hipótesis clave</h2>
           <p class="hypothesis-text">
@@ -1063,14 +1055,11 @@
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- SLIDE 5B: PANORAMA COMPETITIVO B2B -->
-  <section class="competitive-landscape-section competitive-parallax" id="competitive-b2b">
-
-    <!-- Background layer: Market breakdown -->
-    <div class="competitive-background">
+  <section class="competitive-landscape-section competitive-grow" id="competitive-b2b">
+    <div class="competitive-content">
       <div class="container">
         <!-- Header -->
         <div class="competitive-header">
@@ -1080,60 +1069,54 @@
         </div>
 
         <!-- Visual principal: Mercado B2B -->
-        <div class="market-visual">
-
-        <!-- Círculo central con mercado total -->
-        <div class="market-circle">
-          <div class="circle-dashed">
-            <div class="circle-segment">
-              <div class="segment-inner" style="background: var(--electric-violet); opacity: 0.15;"></div>
+        <div class="market-visual market-content">
+          <!-- Círculo central con mercado total -->
+          <div class="market-circle">
+            <div class="circle-dashed">
+              <div class="circle-segment">
+                <div class="segment-inner" style="background: var(--electric-violet); opacity: 0.15;"></div>
+              </div>
+              <div class="total-label">
+                <span class="big-num">15.9M</span>
+                <span class="label-text">trabajadores<br>independientes</span>
+              </div>
             </div>
-            <div class="total-label">
-              <span class="big-num">15.9M</span>
-              <span class="label-text">trabajadores<br>independientes</span>
+          </div>
+
+          <!-- Datos izquierda -->
+          <div class="market-data-left">
+            <div class="data-point">
+              <span class="data-number">~12M</span>
+              <span class="data-label">sin solución digital formal (75%)</span>
+            </div>
+            <div class="data-point" style="margin-top: 12px; font-size: 0.85rem; opacity: 0.8;">
+              <span class="data-label">Operan informalmente o usan Portal SAT</span>
+            </div>
+          </div>
+
+          <!-- Datos derecha: Breakdown del mercado servido -->
+          <div class="market-data-right">
+            <div class="data-breakdown">
+              <div class="breakdown-item">
+                <span class="breakdown-number">~3.9M</span>
+                <span class="breakdown-label">con solución actual (25%)</span>
+              </div>
+              <div class="breakdown-detail">
+                <span class="detail-line"><strong>~2M</strong> Aspel/CONTPAQi + software contable (13%)</span>
+                <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">PYMES establecidas con contabilidad formal</span>
+
+                <span class="detail-line" style="margin-top: 8px;"><strong>~1.2M</strong> Plataformas digitales (8%)</span>
+                <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">658K-1.2M registrados IMSS · 74.2% informalidad</span>
+                <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">Solo 13.7% con seguridad social completa</span>
+
+                <span class="detail-line" style="margin-top: 8px;"><strong>~700K</strong> Otros (4%)</span>
+                <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">Despachos, TaxDown, Fixat</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Datos izquierda -->
-        <div class="market-data-left">
-          <div class="data-point">
-            <span class="data-number">~12M</span>
-            <span class="data-label">sin solución digital formal (75%)</span>
-          </div>
-          <div class="data-point" style="margin-top: 12px; font-size: 0.85rem; opacity: 0.8;">
-            <span class="data-label">Operan informalmente o usan Portal SAT</span>
-          </div>
-        </div>
-
-        <!-- Datos derecha: Breakdown del mercado servido -->
-        <div class="market-data-right">
-          <div class="data-breakdown">
-            <div class="breakdown-item">
-              <span class="breakdown-number">~3.9M</span>
-              <span class="breakdown-label">con solución actual (25%)</span>
-            </div>
-            <div class="breakdown-detail">
-              <span class="detail-line"><strong>~2M</strong> Aspel/CONTPAQi + software contable (13%)</span>
-              <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">PYMES establecidas con contabilidad formal</span>
-
-              <span class="detail-line" style="margin-top: 8px;"><strong>~1.2M</strong> Plataformas digitales (8%)</span>
-              <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">658K-1.2M registrados IMSS · 74.2% informalidad</span>
-              <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">Solo 13.7% con seguridad social completa</span>
-
-              <span class="detail-line" style="margin-top: 8px;"><strong>~700K</strong> Otros (4%)</span>
-              <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">Despachos, TaxDown, Fixat</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      </div>
-    </div>
-
-    <!-- Foreground layer: Key insight (sticky) -->
-    <div class="competitive-foreground">
-      <div class="container">
+        <!-- Hipótesis clave - grows on scroll -->
         <div class="hypothesis-box competitive-insight">
           <h2 class="hypothesis-title">Blue Ocean: 6-8M Freelancers Informales Desatendidos</h2>
           <p class="hypothesis-text">
@@ -1148,7 +1131,6 @@
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- SLIDE 6: SÍNTESIS DEL ANÁLISIS DE MERCADO -->
@@ -1538,19 +1520,20 @@
     lucide.createIcons();
   </script>
 
-  <!-- Parallax effect for competitive landscape sections -->
+  <!-- Grow effect for competitive landscape sections -->
   <script>
-    // Parallax scroll effect for competitive landscape sections
-    function initCompetitiveParallax() {
-      const sections = document.querySelectorAll('.competitive-parallax');
+    // Grow/scale effect for competitive landscape sections
+    function initCompetitiveGrow() {
+      const sections = document.querySelectorAll('.competitive-grow');
 
       sections.forEach(section => {
-        const background = section.querySelector('.competitive-background');
-        const foreground = section.querySelector('.competitive-foreground');
+        const header = section.querySelector('.competitive-header');
+        const marketContent = section.querySelector('.market-content');
+        const insight = section.querySelector('.competitive-insight');
 
-        if (!background || !foreground) return;
+        if (!header || !marketContent || !insight) return;
 
-        function updateParallax() {
+        function updateGrow() {
           const rect = section.getBoundingClientRect();
           const sectionHeight = section.offsetHeight;
           const viewportHeight = window.innerHeight;
@@ -1560,19 +1543,21 @@
             -rect.top / (sectionHeight - viewportHeight)
           ));
 
-          // Background moves up faster (parallax effect) and fades out
-          const backgroundTranslateY = scrollProgress * -100; // moves up 100vh
-          const backgroundOpacity = Math.max(0, 1 - (scrollProgress * 2)); // fades out
-          const backgroundBlur = scrollProgress * 10; // blur up to 10px
+          // Fade out header and market content as we scroll
+          const fadeOutProgress = Math.min(1, scrollProgress * 2); // fade faster
+          header.style.opacity = 1 - fadeOutProgress;
+          header.style.transform = `translateY(${-fadeOutProgress * 20}px)`;
 
-          background.style.transform = `translateY(${backgroundTranslateY}vh)`;
-          background.style.opacity = backgroundOpacity;
-          background.style.filter = `blur(${backgroundBlur}px)`;
+          marketContent.style.opacity = 1 - fadeOutProgress;
+          marketContent.style.transform = `scale(${1 - fadeOutProgress * 0.1})`;
 
-          // Foreground (insight) moves up slower, creating parallax
-          // Starts below viewport and moves to center
-          const foregroundTranslateY = (1 - scrollProgress) * 50 - 50; // from +50vh to -50vh
-          foreground.style.transform = `translateY(${foregroundTranslateY}vh)`;
+          // Grow insight from scale 1 to scale 1.5
+          // Start growing at scrollProgress > 0.2
+          const growStart = 0.2;
+          const growProgress = Math.max(0, (scrollProgress - growStart) / (1 - growStart));
+          const scale = 1 + (growProgress * 0.5); // grows from 1 to 1.5
+
+          insight.style.transform = `translate(-50%, -50%) scale(${scale})`;
         }
 
         // Update on scroll with throttling for performance
@@ -1580,7 +1565,7 @@
         function requestTick() {
           if (!ticking) {
             window.requestAnimationFrame(() => {
-              updateParallax();
+              updateGrow();
               ticking = false;
             });
             ticking = true;
@@ -1590,15 +1575,15 @@
         window.addEventListener('scroll', requestTick, { passive: true });
 
         // Initial check
-        updateParallax();
+        updateGrow();
       });
     }
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initCompetitiveParallax);
+      document.addEventListener('DOMContentLoaded', initCompetitiveGrow);
     } else {
-      initCompetitiveParallax();
+      initCompetitiveGrow();
     }
   </script>
 
