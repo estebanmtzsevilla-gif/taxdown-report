@@ -1009,40 +1009,77 @@
       </div>
 
       <!-- Visual principal: Datos del mercado -->
-      <div class="market-visual">
+      <div class="market-visual-icons">
 
-        <!-- Círculo central con dato destacado -->
-        <div class="market-circle">
-          <div class="circle-dashed">
-            <div class="circle-segment">
-              <div class="segment-inner"></div>
-            </div>
-            <div class="total-label">
-              <span class="big-num">69M</span>
-              <span class="label-text">total de<br>contribuyentes</span>
-            </div>
-          </div>
+        <!-- Grid de íconos de personas -->
+        <div class="people-grid">
+          <div class="people-grid-icon">👥</div>
+          <!-- Fila 1: 8 inactivos, 2 activos -->
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person active">👤</div>
+          <div class="person active">👤</div>
+          <!-- Fila 2: 8 inactivos, 2 activos -->
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person inactive">👤</div>
+          <div class="person active">👤</div>
+          <div class="person active">👤</div>
         </div>
 
-        <!-- Datos alrededor -->
-        <div class="market-data-left">
-          <div class="data-point">
-            <span class="data-number">57.6M</span>
-            <span class="data-label">no declaran</span>
-          </div>
+        <!-- Estadística central destacada -->
+        <div class="market-stat-highlight">
+          <div class="stat-big">83%</div>
+          <div class="stat-description">de contribuyentes<br>no presentan declaración</div>
+          <div class="stat-context">57.6M de 69M total</div>
         </div>
 
-        <div class="market-data-right">
-          <div class="data-breakdown">
-            <div class="breakdown-item">
-              <span class="breakdown-number">11.4M</span>
-              <span class="breakdown-label">presentan declaración</span>
+        <!-- Breakdown de quienes SÍ declaran -->
+        <div class="market-breakdown-visual">
+          <div class="breakdown-title">De los 11.4M que sí declaran:</div>
+          <div class="breakdown-bars">
+
+            <div class="breakdown-bar-item">
+              <div class="breakdown-bar-header">
+                <span class="breakdown-label">Portal SAT</span>
+                <span class="breakdown-percentage">85-87%</span>
+              </div>
+              <div class="breakdown-bar">
+                <div class="breakdown-bar-fill sat" style="width: 86%"></div>
+              </div>
             </div>
-            <div class="breakdown-detail">
-              <span class="detail-line"><strong>85-87%</strong> Declaran vía SAT</span>
-              <span class="detail-line"><strong>9-10%</strong> TaxDown</span>
-              <span class="detail-line"><strong>3-4%</strong> Contadores</span>
+
+            <div class="breakdown-bar-item">
+              <div class="breakdown-bar-header">
+                <span class="breakdown-label">TaxDown</span>
+                <span class="breakdown-percentage">9-10%</span>
+              </div>
+              <div class="breakdown-bar">
+                <div class="breakdown-bar-fill taxdown" style="width: 9.5%"></div>
+              </div>
             </div>
+
+            <div class="breakdown-bar-item">
+              <div class="breakdown-bar-header">
+                <span class="breakdown-label">Contadores</span>
+                <span class="breakdown-percentage">3-4%</span>
+              </div>
+              <div class="breakdown-bar">
+                <div class="breakdown-bar-fill contador" style="width: 3.5%"></div>
+              </div>
+            </div>
+
           </div>
         </div>
 
