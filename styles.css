@@ -1147,21 +1147,23 @@ body {
 /* === HIPÓTESIS CLAVE === */
 .hypothesis-box {
   max-width: 900px;
-  margin: 0 auto;
-  background: var(--card-bg);
-  border-left: 4px solid var(--science-blue);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-sm);
+  margin: 40px auto;
+  background: rgba(253, 253, 253, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
 }
 
 .hypothesis-title {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-secondary);
-  margin-bottom: 12px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-ink);
 }
 
 .hypothesis-text {
@@ -1681,13 +1683,13 @@ body {
 .section-title {
   font-size: 3rem;
   color: white;
-  text-align: center;
+  text-align: left;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .section-subtitle {
-  text-align: center;
+  text-align: left;
   color: #94a3b8;
   font-size: 1.2rem;
   margin-bottom: 3rem;
