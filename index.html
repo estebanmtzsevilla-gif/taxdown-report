@@ -1522,20 +1522,39 @@
 
   <!-- Sticky quote effect for insights -->
   <script>
-    // Sticky quote effect for competitive landscape insights
+    // Sticky quote effect with progressive scale
     function initStickyQuote() {
       const quotes = document.querySelectorAll('.sticky-quote');
 
       quotes.forEach(quote => {
+        const content = quote.querySelector('.hypothesis-title').parentElement;
+
         function updateQuote() {
           const rect = quote.getBoundingClientRect();
           const viewportHeight = window.innerHeight;
+          const viewportCenter = viewportHeight / 2;
 
-          // Check if quote is in viewport and at the top (sticky)
-          if (rect.top <= 10 && rect.bottom >= viewportHeight / 2) {
-            quote.classList.add('active');
+          // Calculate distance from center (0 = at center, 1 = far away)
+          const distanceFromCenter = Math.abs(rect.top + rect.height / 2 - viewportCenter) / viewportHeight;
+
+          // Calculate scale: grows as it approaches center (1.0 to 1.5)
+          // When distanceFromCenter = 0 (at center), scale = 1.5
+          // When distanceFromCenter = 1 (far), scale = 1.0
+          const scale = 1 + (1 - Math.min(distanceFromCenter * 2, 1)) * 0.5;
+
+          // Apply scale to content
+          if (content) {
+            content.style.transform = `scale(${scale})`;
+          }
+
+          // Check if quote is centered and sticky (fullscreen mode)
+          const isCentered = rect.top <= viewportCenter && rect.bottom >= viewportCenter;
+          const isAtTop = rect.top <= 0;
+
+          if (isCentered && isAtTop && scale > 1.4) {
+            quote.classList.add('fullscreen');
           } else {
-            quote.classList.remove('active');
+            quote.classList.remove('fullscreen');
           }
         }
 
