@@ -1546,9 +1546,9 @@
 
       sections.forEach(section => {
         const background = section.querySelector('.competitive-background');
-        const insight = section.querySelector('.competitive-insight');
+        const foreground = section.querySelector('.competitive-foreground');
 
-        if (!background || !insight) return;
+        if (!background || !foreground) return;
 
         function updateParallax() {
           const rect = section.getBoundingClientRect();
@@ -1560,23 +1560,34 @@
             -rect.top / (sectionHeight - viewportHeight)
           ));
 
-          // Fade out background when scroll progress > 0.3
-          if (scrollProgress > 0.3) {
-            background.classList.add('fade-out');
-          } else {
-            background.classList.remove('fade-out');
-          }
+          // Background moves up faster (parallax effect) and fades out
+          const backgroundTranslateY = scrollProgress * -100; // moves up 100vh
+          const backgroundOpacity = Math.max(0, 1 - (scrollProgress * 2)); // fades out
+          const backgroundBlur = scrollProgress * 10; // blur up to 10px
 
-          // Show insight when scroll progress > 0.4
-          if (scrollProgress > 0.4 && scrollProgress < 0.9) {
-            insight.classList.add('visible');
-          } else {
-            insight.classList.remove('visible');
+          background.style.transform = `translateY(${backgroundTranslateY}vh)`;
+          background.style.opacity = backgroundOpacity;
+          background.style.filter = `blur(${backgroundBlur}px)`;
+
+          // Foreground (insight) moves up slower, creating parallax
+          // Starts below viewport and moves to center
+          const foregroundTranslateY = (1 - scrollProgress) * 50 - 50; // from +50vh to -50vh
+          foreground.style.transform = `translateY(${foregroundTranslateY}vh)`;
+        }
+
+        // Update on scroll with throttling for performance
+        let ticking = false;
+        function requestTick() {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              updateParallax();
+              ticking = false;
+            });
+            ticking = true;
           }
         }
 
-        // Update on scroll
-        window.addEventListener('scroll', updateParallax, { passive: true });
+        window.addEventListener('scroll', requestTick, { passive: true });
 
         // Initial check
         updateParallax();
