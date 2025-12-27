@@ -1046,14 +1046,18 @@
         </div>
       </div>
 
-      <!-- Hipótesis clave - sticky quote -->
+    </div>
+  </section>
+
+  <!-- Sticky Quote Section - separate section with scroll range -->
+  <section class="sticky-quote-section">
+    <div class="sticky-quote-wrapper">
       <div class="hypothesis-box sticky-quote">
         <h2 class="hypothesis-title">Hipótesis clave</h2>
         <p class="hypothesis-text">
           El competidor no es SAT, Fixat u otros players emergentes, es la inacción. Para llegar a ese universo de 57M, se vuelve fundamental entender las razones detrás de la poca participación del contribuyente. El verdadero reto es <strong>educación y generación de confianza</strong>, no competencia directa.
         </p>
       </div>
-
     </div>
   </section>
 
@@ -1116,7 +1120,12 @@
         </div>
       </div>
 
-      <!-- Hipótesis clave - sticky quote -->
+    </div>
+  </section>
+
+  <!-- Sticky Quote Section B2B - separate section with scroll range -->
+  <section class="sticky-quote-section">
+    <div class="sticky-quote-wrapper">
       <div class="hypothesis-box sticky-quote">
         <h2 class="hypothesis-title">Blue Ocean: 6-8M Freelancers Informales Desatendidos</h2>
         <p class="hypothesis-text">
@@ -1129,7 +1138,6 @@
           <li style="margin-top: 12px; color: var(--inch-worm); font-weight: 600;"><strong>✓</strong> NECESITAN solución simple, barata, digital</li>
         </ul>
       </div>
-
     </div>
   </section>
 
@@ -1520,65 +1528,35 @@
     lucide.createIcons();
   </script>
 
-  <!-- Sticky quote effect for insights -->
+  <!-- Sticky quote effect for insights - SIMPLIFIED -->
   <script>
-    // Sticky quote effect with progressive scale
     function initStickyQuote() {
-      const quotes = document.querySelectorAll('.sticky-quote');
+      const sections = document.querySelectorAll('.sticky-quote-section');
 
-      quotes.forEach(quote => {
-        const title = quote.querySelector('.hypothesis-title');
-        const text = quote.querySelector('.hypothesis-text');
-        const list = quote.querySelector('ul');
+      sections.forEach(section => {
+        const wrapper = section.querySelector('.sticky-quote-wrapper');
+        const quote = section.querySelector('.sticky-quote');
 
         function updateQuote() {
-          const rect = quote.getBoundingClientRect();
+          const sectionRect = section.getBoundingClientRect();
+          const sectionHeight = section.offsetHeight;
           const viewportHeight = window.innerHeight;
-          const quoteHeight = quote.offsetHeight;
 
-          // When quote reaches the top and is sticky
-          const isSticky = rect.top <= 0;
+          // Calculate scroll progress through the section (0 to 1)
+          const scrollProgress = Math.max(0, Math.min(1, -sectionRect.top / (sectionHeight - viewportHeight)));
 
-          // Calculate how far we've scrolled past the sticky point
-          const stickyProgress = isSticky ? Math.abs(rect.top) : 0;
+          // Scale grows from 1.0 to 1.2 as you scroll through
+          const scale = 1 + (scrollProgress * 0.2);
+          quote.style.transform = `scale(${scale})`;
 
-          // Define a "hold" range where it stays fullscreen (e.g., 300px of scroll)
-          const holdDistance = 300;
-
-          if (!isSticky) {
-            // APPROACHING: Quote hasn't reached top yet
-            const approachProgress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / viewportHeight));
-            const scale = 1 + (approachProgress * 0.3);
-
-            if (title) title.style.transform = `scale(${scale})`;
-            if (text) text.style.transform = `scale(${scale})`;
-            if (list) list.style.transform = `scale(${scale})`;
-
-            quote.classList.remove('fullscreen');
-
-          } else if (stickyProgress <= holdDistance) {
-            // STICKY & FULLSCREEN: In the hold range
-            const scale = 1.3;
-
-            if (title) title.style.transform = `scale(${scale})`;
-            if (text) text.style.transform = `scale(${scale})`;
-            if (list) list.style.transform = `scale(${scale})`;
-
-            quote.classList.add('fullscreen');
-
+          // Activate fullscreen when scrolled halfway through (0.5)
+          if (scrollProgress > 0.4 && scrollProgress < 0.8) {
+            wrapper.classList.add('fullscreen');
           } else {
-            // PASSED: Scrolled beyond the hold distance
-            const scale = 1.3;
-
-            if (title) title.style.transform = `scale(${scale})`;
-            if (text) text.style.transform = `scale(${scale})`;
-            if (list) list.style.transform = `scale(${scale})`;
-
-            quote.classList.remove('fullscreen');
+            wrapper.classList.remove('fullscreen');
           }
         }
 
-        // Update on scroll with throttling for performance
         let ticking = false;
         function requestTick() {
           if (!ticking) {
@@ -1591,13 +1569,10 @@
         }
 
         window.addEventListener('scroll', requestTick, { passive: true });
-
-        // Initial check
         updateQuote();
       });
     }
 
-    // Initialize when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initStickyQuote);
     } else {
