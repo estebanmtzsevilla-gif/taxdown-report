@@ -757,7 +757,165 @@ body {
   margin-bottom: 10px;
 }
 
-/* === VISUALIZACIÓN DEL MERCADO B2C === */
+/* === VISUALIZACIÓN DEL MERCADO B2C CON ÍCONOS === */
+.market-visual-icons {
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Grid de personas */
+.people-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.people-grid-icon {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.person {
+  font-size: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.person.inactive {
+  opacity: 0.2;
+  filter: grayscale(100%);
+}
+
+.person.active {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Estadística central destacada */
+.market-stat-highlight {
+  text-align: center;
+  padding: 40px;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.stat-big {
+  font-size: 7rem;
+  font-weight: 800;
+  color: var(--text-ink);
+  line-height: 1;
+  margin-bottom: 15px;
+  letter-spacing: -0.05em;
+}
+
+.stat-description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.stat-context {
+  font-size: 0.95rem;
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+/* Breakdown visual con barras */
+.market-breakdown-visual {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.breakdown-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.breakdown-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.breakdown-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.breakdown-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breakdown-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-ink);
+}
+
+.breakdown-percentage {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.breakdown-bar {
+  height: 32px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.breakdown-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  transition: width 1.5s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.breakdown-bar-fill.sat {
+  background: linear-gradient(90deg, #64748b 0%, #475569 100%);
+}
+
+.breakdown-bar-fill.taxdown {
+  background: linear-gradient(90deg, var(--inch-worm) 0%, #96d01a 100%);
+}
+
+.breakdown-bar-fill.contador {
+  background: linear-gradient(90deg, var(--sky-blue) 0%, #0891b2 100%);
+}
+
+/* === VISUALIZACIÓN DEL MERCADO B2C (LEGACY) === */
 .market-visual {
   position: relative;
   max-width: 1000px;
@@ -1020,6 +1178,36 @@ body {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .market-visual-icons {
+    gap: 30px;
+  }
+
+  .people-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 300px;
+  }
+
+  .person {
+    font-size: 1.5rem;
+  }
+
+  .stat-big {
+    font-size: 5rem;
+  }
+
+  .stat-description {
+    font-size: 1.1rem;
+  }
+
+  .market-stat-highlight {
+    padding: 30px 20px;
+  }
+
+  .market-breakdown-visual {
+    padding: 0 20px;
+  }
+
   .market-visual {
     flex-direction: column;
     min-height: 600px;
