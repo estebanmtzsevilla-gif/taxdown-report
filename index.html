@@ -1534,44 +1534,45 @@
         function updateQuote() {
           const rect = quote.getBoundingClientRect();
           const viewportHeight = window.innerHeight;
+          const quoteHeight = quote.offsetHeight;
 
-          // Check if the quote is still in the sticky range
-          // rect.bottom > 0 means the element hasn't scrolled completely past
-          const isInStickyRange = rect.top <= 0 && rect.bottom > viewportHeight;
+          // When quote reaches the top and is sticky
+          const isSticky = rect.top <= 0;
 
-          if (isInStickyRange) {
-            // Quote is sticky at top
-            const scrollProgress = Math.max(0, Math.min(1, 1 - (rect.top / viewportHeight)));
+          // Calculate how far we've scrolled past the sticky point
+          const stickyProgress = isSticky ? Math.abs(rect.top) : 0;
 
-            // Calculate scale: grows from 1.0 to 1.3 as it scrolls into view
-            const scale = 1 + (scrollProgress * 0.3);
+          // Define a "hold" range where it stays fullscreen (e.g., 300px of scroll)
+          const holdDistance = 300;
 
-            // Apply scale to all content elements
-            if (title) title.style.transform = `scale(${scale})`;
-            if (text) text.style.transform = `scale(${scale})`;
-            if (list) list.style.transform = `scale(${scale})`;
-
-            // Activate fullscreen when almost fully scaled
-            if (scrollProgress > 0.8) {
-              quote.classList.add('fullscreen');
-            } else {
-              quote.classList.remove('fullscreen');
-            }
-          } else if (rect.top > 0) {
-            // Quote hasn't reached top yet - approaching
-            const scrollProgress = Math.max(0, Math.min(1, 1 - (rect.top / viewportHeight)));
-            const scale = 1 + (scrollProgress * 0.3);
+          if (!isSticky) {
+            // APPROACHING: Quote hasn't reached top yet
+            const approachProgress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / viewportHeight));
+            const scale = 1 + (approachProgress * 0.3);
 
             if (title) title.style.transform = `scale(${scale})`;
             if (text) text.style.transform = `scale(${scale})`;
             if (list) list.style.transform = `scale(${scale})`;
 
             quote.classList.remove('fullscreen');
+
+          } else if (stickyProgress <= holdDistance) {
+            // STICKY & FULLSCREEN: In the hold range
+            const scale = 1.3;
+
+            if (title) title.style.transform = `scale(${scale})`;
+            if (text) text.style.transform = `scale(${scale})`;
+            if (list) list.style.transform = `scale(${scale})`;
+
+            quote.classList.add('fullscreen');
+
           } else {
-            // Quote has scrolled past (bottom <= viewportHeight) - reset
-            if (title) title.style.transform = `scale(1)`;
-            if (text) text.style.transform = `scale(1)`;
-            if (list) list.style.transform = `scale(1)`;
+            // PASSED: Scrolled beyond the hold distance
+            const scale = 1.3;
+
+            if (title) title.style.transform = `scale(${scale})`;
+            if (text) text.style.transform = `scale(${scale})`;
+            if (list) list.style.transform = `scale(${scale})`;
 
             quote.classList.remove('fullscreen');
           }
