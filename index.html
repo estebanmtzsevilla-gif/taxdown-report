@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=1766993887">
   <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
@@ -997,147 +997,151 @@
 
 </div> <!-- Cierre de scrolly-container -->
 
-  <!-- SLIDE 5A: PANORAMA COMPETITIVO B2C -->
-  <section class="competitive-landscape-section" id="competitive-b2c">
-    <div class="container">
-
-      <!-- Header -->
-      <div class="competitive-header">
-        <div class="label text-blue">PANORAMA COMPETITIVO B2C</div>
-        <h2 class="display-lg">Vertical Asalariados</h2>
-        <p class="text-body">Personas físicas con saldo a favor · Mercado de ~11.4M declarantes</p>
-      </div>
-
-      <!-- Visual principal: Datos del mercado -->
-      <div class="market-visual">
-        <!-- Círculo central con dato destacado -->
-        <div class="market-circle">
-          <div class="circle-dashed">
-            <div class="circle-segment">
-              <div class="segment-inner"></div>
-            </div>
-            <div class="total-label">
-              <span class="big-num">69M</span>
-              <span class="label-text">total de<br>contribuyentes</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Datos alrededor -->
-        <div class="market-data-left">
-          <div class="data-point">
-            <span class="data-number">57.6M</span>
-            <span class="data-label">no declaran</span>
-          </div>
-        </div>
-
-        <div class="market-data-right">
-          <div class="data-breakdown">
-            <div class="breakdown-item">
-              <span class="breakdown-number">11.4M</span>
-              <span class="breakdown-label">presentan declaración</span>
-            </div>
-            <div class="breakdown-detail">
-              <span class="detail-line"><strong>85-87%</strong> Declaran vía SAT</span>
-              <span class="detail-line"><strong>9-10%</strong> TaxDown</span>
-              <span class="detail-line"><strong>3-4%</strong> Contadores</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Sticky Quote Section - separate section with scroll range -->
-  <section class="sticky-quote-section">
+  <!-- SLIDE 5A: PANORAMA COMPETITIVO B2C + STICKY INSIGHT -->
+  <section class="sticky-quote-section" data-section="b2c">
     <div class="sticky-quote-wrapper">
-      <div class="hypothesis-box sticky-quote">
-        <h2 class="hypothesis-title">Hipótesis clave</h2>
-        <p class="hypothesis-text">
+
+      <!-- Contenido completo que se desvanece -->
+      <div class="initial-content">
+        <div class="container">
+          <!-- Header -->
+          <div class="competitive-header">
+            <div class="label text-blue">PANORAMA COMPETITIVO B2C</div>
+            <h2 class="display-lg">Vertical Asalariados</h2>
+            <p class="text-body">Personas físicas con saldo a favor · Mercado de ~11.4M declarantes</p>
+          </div>
+
+          <!-- Visual principal: Datos del mercado -->
+          <div class="market-visual">
+            <!-- Círculo central con dato destacado -->
+            <div class="market-circle">
+              <div class="circle-dashed">
+                <div class="circle-segment">
+                  <div class="segment-inner"></div>
+                </div>
+                <div class="total-label">
+                  <span class="big-num">69M</span>
+                  <span class="label-text">contribuyentes</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Datos alrededor -->
+            <div class="market-data-left">
+              <div class="data-point">
+                <span class="data-number">57.6M</span>
+                <span class="data-label">no declaran</span>
+              </div>
+            </div>
+
+            <div class="market-data-right">
+              <div class="data-breakdown">
+                <div class="breakdown-item">
+                  <span class="breakdown-number">11.4M</span>
+                  <span class="breakdown-label">presentan declaración</span>
+                </div>
+                <div class="breakdown-detail">
+                  <span class="detail-line"><strong>85-87%</strong> Declaran vía SAT</span>
+                  <span class="detail-line"><strong>9-10%</strong> TaxDown</span>
+                  <span class="detail-line"><strong>3-4%</strong> Contadores</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto fullscreen (aparece con scroll) -->
+      <div class="fullscreen-quote">
+        <h2 class="fs-title">Takeaway clave</h2>
+        <h3 class="fs-subtitle">Acompañamiento y enseñanza son el diferenciador</h3>
+        <p class="fs-text">
           El competidor no es SAT, Fixat u otros players emergentes, es la inacción. Para llegar a ese universo de 57M, se vuelve fundamental entender las razones detrás de la poca participación del contribuyente. El verdadero reto es <strong>educación y generación de confianza</strong>, no competencia directa.
         </p>
       </div>
-    </div>
-  </section>
-
-  <!-- SLIDE 5B: PANORAMA COMPETITIVO B2B -->
-  <section class="competitive-landscape-section" id="competitive-b2b">
-    <div class="container">
-
-      <!-- Header -->
-      <div class="competitive-header">
-        <div class="label text-violet">PANORAMA COMPETITIVO B2B</div>
-        <h2 class="display-lg">Vertical Gig Economy & Freelancers</h2>
-        <p class="text-body">Trabajadores independientes en México · Mercado de ~15.9M personas</p>
-      </div>
-
-      <!-- Visual principal: Mercado B2B -->
-      <div class="market-visual">
-        <!-- Círculo central con mercado total -->
-        <div class="market-circle">
-          <div class="circle-dashed">
-            <div class="circle-segment">
-              <div class="segment-inner" style="background: var(--electric-violet); opacity: 0.15;"></div>
-            </div>
-            <div class="total-label">
-              <span class="big-num">15.9M</span>
-              <span class="label-text">trabajadores<br>independientes</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Datos izquierda -->
-        <div class="market-data-left">
-          <div class="data-point">
-            <span class="data-number">~12M</span>
-            <span class="data-label">sin solución digital formal (75%)</span>
-          </div>
-          <div class="data-point" style="margin-top: 12px; font-size: 0.85rem; opacity: 0.8;">
-            <span class="data-label">Operan informalmente o usan Portal SAT</span>
-          </div>
-        </div>
-
-        <!-- Datos derecha: Breakdown del mercado servido -->
-        <div class="market-data-right">
-          <div class="data-breakdown">
-            <div class="breakdown-item">
-              <span class="breakdown-number">~3.9M</span>
-              <span class="breakdown-label">con solución actual (25%)</span>
-            </div>
-            <div class="breakdown-detail">
-              <span class="detail-line"><strong>~2M</strong> Aspel/CONTPAQi + software contable (13%)</span>
-              <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">PYMES establecidas con contabilidad formal</span>
-
-              <span class="detail-line" style="margin-top: 8px;"><strong>~1.2M</strong> Plataformas digitales (8%)</span>
-              <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">658K-1.2M registrados IMSS · 74.2% informalidad</span>
-              <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">Solo 13.7% con seguridad social completa</span>
-
-              <span class="detail-line" style="margin-top: 8px;"><strong>~700K</strong> Otros (4%)</span>
-              <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">Despachos, TaxDown, Fixat</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
   </section>
 
-  <!-- Sticky Quote Section B2B - separate section with scroll range -->
-  <section class="sticky-quote-section">
+  <!-- SLIDE 5B: PANORAMA COMPETITIVO B2B + STICKY INSIGHT -->
+  <section class="sticky-quote-section" data-section="b2b">
     <div class="sticky-quote-wrapper">
-      <div class="hypothesis-box sticky-quote">
-        <h2 class="hypothesis-title">Blue Ocean: 6-8M Freelancers Informales Desatendidos</h2>
-        <p class="hypothesis-text">
+
+      <!-- Contenido completo que se desvanece -->
+      <div class="initial-content">
+        <div class="container">
+          <!-- Header -->
+          <div class="competitive-header">
+            <div class="label text-violet">PANORAMA COMPETITIVO B2B</div>
+            <h2 class="display-lg">Vertical Gig Economy & Freelancers</h2>
+            <p class="text-body">Trabajadores independientes en México · Mercado de ~15.9M personas</p>
+          </div>
+
+          <!-- Visual principal: Mercado B2B -->
+          <div class="market-visual">
+            <!-- Círculo central con mercado total -->
+            <div class="market-circle">
+              <div class="circle-dashed">
+                <div class="circle-segment">
+                  <div class="segment-inner" style="background: var(--electric-violet); opacity: 0.15;"></div>
+                </div>
+                <div class="total-label">
+                  <span class="big-num">15.9M</span>
+                  <span class="label-text">trabajadores<br>independientes</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Datos izquierda -->
+            <div class="market-data-left">
+              <div class="data-point">
+                <span class="data-number">~12M</span>
+                <span class="data-label">sin solución digital formal (75%)</span>
+              </div>
+              <div class="data-point" style="margin-top: 12px; font-size: 0.85rem; opacity: 0.8;">
+                <span class="data-label">Operan informalmente o usan Portal SAT</span>
+              </div>
+            </div>
+
+            <!-- Datos derecha: Breakdown del mercado servido -->
+            <div class="market-data-right">
+              <div class="data-breakdown">
+                <div class="breakdown-item">
+                  <span class="breakdown-number">~3.9M</span>
+                  <span class="breakdown-label">con solución actual (25%)</span>
+                </div>
+                <div class="breakdown-detail">
+                  <span class="detail-line"><strong>~2M</strong> Aspel/CONTPAQi + software contable (13%)</span>
+                  <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">PYMES establecidas con contabilidad formal</span>
+
+                  <span class="detail-line" style="margin-top: 8px;"><strong>~1.2M</strong> Plataformas digitales (8%)</span>
+                  <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">658K-1.2M registrados IMSS · 74.2% informalidad</span>
+                  <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">Solo 13.7% con seguridad social completa</span>
+
+                  <span class="detail-line" style="margin-top: 8px;"><strong>~700K</strong> Otros (4%)</span>
+                  <span class="detail-line" style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">Despachos, TaxDown, Fixat</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto fullscreen (aparece con scroll) -->
+      <div class="fullscreen-quote">
+        <h2 class="fs-title">Takeaway clave</h2>
+        <h3 class="fs-subtitle">Blue Ocean: 6-8M Freelancers Informales Desatendidos</h3>
+        <p class="fs-text">
           El dato de <strong>74.2% informalidad en gig economy es real y validado</strong>. Pero la gran oportunidad no está solo en plataformas digitales (1.2M), sino en <strong>6-8M freelancers/independientes completamente informales</strong> que:
         </p>
-        <ul style="margin-top: 12px; padding-left: 24px; list-style: none;">
-          <li style="margin-bottom: 8px;"><strong>✗</strong> NO usan Aspel (muy complejo)</li>
-          <li style="margin-bottom: 8px;"><strong>✗</strong> NO usan despachos (muy caro)</li>
-          <li style="margin-bottom: 8px;"><strong>✗</strong> NO declaran o lo hacen mal por Portal SAT</li>
-          <li style="margin-top: 12px; color: var(--inch-worm); font-weight: 600;"><strong>✓</strong> NECESITAN solución simple, barata, digital</li>
+        <ul class="fs-list">
+          <li><strong>✗</strong> NO usan Aspel (muy complejo)</li>
+          <li><strong>✗</strong> NO usan despachos (muy caro)</li>
+          <li><strong>✗</strong> NO declaran o lo hacen mal por Portal SAT</li>
+          <li style="margin-top: 12px; font-weight: 600;"><strong>✓</strong> NECESITAN solución simple, barata, digital</li>
         </ul>
       </div>
+
     </div>
   </section>
 
@@ -1191,9 +1195,9 @@
 
       <div class="bento-card bento-card-init">
         <div class="card-content border-l-blue">
-          <h3 class="heading-md text-blue text-slate-800 mb-1">Oportunidad Estratégica</h3>
+          <h3 class="heading-md text-slate-800 mb-1">Oportunidad Estratégica</h3>
           <p class="text-body text-lg text-slate-300">
-            Con <strong class="text-white">10% market share</strong> en mercados clave y <strong class="text-white">85-90% del mercado aún sin servir</strong> por plataformas digitales, TaxDown tiene espacio masivo para crecer. La estrategia debe enfocarse en:
+            Con <strong class="text-slate-800">10% market share</strong> en mercados clave y <strong class="text-slate-800">85-90% del mercado aún sin servir</strong> por plataformas digitales, TaxDown tiene espacio masivo para crecer. La estrategia debe enfocarse en:
           </p>
           <div class="grid-3-cols">
             <div class="text-slate-300">
@@ -1231,99 +1235,91 @@
     <div class="slide-num slide-num-white">7 / 14</div>
   </section>
 
-  <!-- SLIDE 8: FRICCIÓN Y VALOR -->
-  <section class="friction-value-section">
+  <!-- SLIDE 8: FRICCIÓN Y VALOR - Compact One-Viewport Layout -->
+  <section class="friction-value-section-compact">
     <div class="container">
-      <div class="label text-red mb-05">UX AUDIT</div>
-      <h2 class="display-lg mb-2">Detalles que Restan Valor</h2>
-      
-      <div class="grid-2-cols">
-        
-        <div class="column friction-col">
-          <div class="col-header">
-            <div class="icon-badge red-badge">🛑</div>
+      <!-- Header compacto -->
+      <div class="compact-header">
+        <div class="label text-red">UX AUDIT</div>
+        <h2 class="display-md">Detalles que Restan Valor</h2>
+      </div>
+
+      <!-- Grid de 2 columnas compacto -->
+      <div class="compact-grid">
+
+        <!-- Columna izquierda: Fricción -->
+        <div class="compact-column">
+          <div class="compact-col-header">
             <h3>Estado Actual: Fricción en la Experiencia</h3>
             <p>Barreras que detienen la conversión.</p>
           </div>
 
-          <div class="obstacles-container">
-            <div class="obstacle-card">
-              <div class="obs-marker">P0</div>
-              <div class="obs-content">
+          <!-- Grupo P0 -->
+          <div class="priority-group">
+            <div class="priority-badge badge-p0">P0</div>
+            <div class="priority-list">
+              <div class="priority-item">
                 <h4>OTP's no funcionan (FInSocial)</h4>
                 <p>En el flujo con el aliado FInSocial, los códigos OTP fallan constantemente. Punto de quiebre crítico que genera abandono masivo.</p>
               </div>
-            </div>
-
-            <div class="obstacle-card">
-              <div class="obs-marker">P0</div>
-              <div class="obs-content">
+              <div class="priority-item">
                 <h4>Falta transparencia en comisiones (FInSocial)</h4>
                 <p>No se explican costos, comisiones y cobros de manera clara. Implementar A/B testing para mostrar breakdown de fees de forma transparente.</p>
               </div>
-            </div>
-
-            <div class="obstacle-card">
-              <div class="obs-marker marker-orange">P1</div>
-              <div class="obs-content">
-                <h4 class="text-orange-500">Identidad visual no homogénea</h4>
-                <p>RRSS y sitio web tienen inconsistencias visuales. La marca debe sentirse cohesiva en todos los touchpoints.</p>
+              <div class="priority-item">
+                <h4>Pocos generadores de confianza</h4>
+                <p>Optimizar las imágenes del sitio y conseguir testimoniales relevantes. No hay certificados visibles ni logos de instituciones de confianza a lo largo de todo el funnel.</p>
               </div>
             </div>
+          </div>
 
-            <div class="obstacle-card">
-              <div class="obs-marker marker-orange">P1</div>
-              <div class="obs-content">
-                <h4 class="text-orange-500">WhatsApp no 24/7</h4>
+          <!-- Grupo P1 -->
+          <div class="priority-group">
+            <div class="priority-badge badge-p1">P1</div>
+            <div class="priority-list">
+              <div class="priority-item">
+                <h4>Identidad visual no homogénea</h4>
+                <p>RRSS y sitio web tienen inconsistencias visuales. La marca debe sentirse cohesiva en todos los touchpoints.</p>
+              </div>
+              <div class="priority-item">
+                <h4>WhatsApp no 24/7</h4>
                 <p>Centro de atención tiene horarios limitados. Identificar flujos clave y automatizar FAQs recurrentes para cobertura continua.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="column value-col">
-          <div class="col-header">
-            <div class="icon-badge gray-badge badge-green"><i data-lucide="check-circle-2" width="24" height="24"></i></div>
+        <!-- Columna derecha: Soluciones -->
+        <div class="compact-column">
+          <div class="compact-col-header solutions-header">
             <h3>Soluciones Prioritarias</h3>
             <p>Acciones para mejorar la experiencia.</p>
           </div>
 
-          <div class="drain-list drain-list-styled">
-            <div class="drain-item drain-item-styled">
-              <div class="drain-icon icon-green">🔧</div>
-              <div class="drain-text">
-                <h4 class="text-slate-800">1. Fix OTP's (Crítico)</h4>
-                <p>→ Trabajar con FInSocial para implementar lógica de reintentos<br>
-                → Alternativas: WhatsApp, llamada telefónica<br>
-                → Testing exhaustivo antes de lanzamiento</p>
-              </div>
+          <div class="compact-solutions">
+            <div class="solution-item">
+              <h4>1. Fix OTP's (Crítico)</h4>
+              <p>→ Trabajar con FInSocial para implementar lógica de reintentos<br>
+              → Alternativas: WhatsApp, llamada telefónica<br>
+              → Testing exhaustivo antes de lanzamiento</p>
             </div>
 
-            <div class="drain-item drain-item-styled">
-              <div class="drain-icon icon-green"><i data-lucide="lightbulb" width="24" height="24"></i></div>
-              <div class="drain-text">
-                <h4 class="text-slate-800">2. Transparencia de Comisiones</h4>
-                <p>→ A/B test mostrando breakdown completo vs. actual<br>
-                → Hipótesis: Transparencia aumenta conversión</p>
-              </div>
+            <div class="solution-item">
+              <h4>2. Transparencia de Comisiones</h4>
+              <p>→ A/B test mostrando breakdown completo vs. actual<br>
+              → Hipótesis: Transparencia aumenta conversión</p>
             </div>
 
-            <div class="drain-item drain-item-styled">
-              <div class="drain-icon icon-green"><i data-lucide="palette" width="24" height="24"></i></div>
-              <div class="drain-text">
-                <h4 class="text-slate-800">3. Unificar Identidad Visual</h4>
-                <p>→ Brand guidelines aplicados a todos los canales<br>
-                → Auditoría visual completa</p>
-              </div>
+            <div class="solution-item">
+              <h4>3. Unificar Identidad Visual</h4>
+              <p>→ Brand guidelines aplicados a todos los canales<br>
+              → Auditoría visual completa</p>
             </div>
 
-            <div class="drain-item">
-              <div class="drain-icon icon-green">🤖</div>
-              <div class="drain-text">
-                <h4 class="text-slate-800">4. Automatización WhatsApp</h4>
-                <p>→ Chatbot para FAQs 24/7<br>
-                → Escalación a humano en horario laboral</p>
-              </div>
+            <div class="solution-item">
+              <h4>4. Automatización WhatsApp</h4>
+              <p>→ Chatbot para FAQs 24/7<br>
+              → Escalación a humano en horario laboral</p>
             </div>
           </div>
         </div>
@@ -1496,17 +1492,30 @@
     <div class="slide-num">13 / 14</div>
   </section>
 
-  <!-- SLIDE 14: CIERRE -->
-  <section class="slide bg-dark">
-    <div class="container text-center">
-      <img src="https://taxdown.es/wp-content/themes/taxdownblog/new-navigator-template/assets/images/logo.svg" alt="TaxDown" class="logo-lg">
-      <h1 class="display-lg text-white mb-2">
-        Hagamos que declarar sea<br>tan fácil como gastar.
+  <!-- SLIDE 14: CIERRE CON VIDEO -->
+  <section class="final-slide">
+    <!-- Video lado izquierdo -->
+    <div class="final-video-container">
+      <video class="final-video" autoplay loop muted playsinline>
+        <source src="https://cdn.midjourney.com/video/9fac55b4-c431-4eb6-8f6c-79793f163e1b/3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Contenido lado derecho -->
+    <div class="final-content">
+      <div class="final-logo">
+        <img src="https://taxdown.es/wp-content/themes/taxdownblog/new-navigator-template/assets/images/logo.svg" alt="TaxDown">
+      </div>
+
+      <h1 class="final-title">
+        Hagamos que declarar se vuelva el mejor momento del año
       </h1>
-      <p class="text-body text-gray-500">
+
+      <p class="final-credits">
         Esteban Martínez<br>Diciembre 2024
       </p>
     </div>
+
     <div class="slide-num slide-num-white">14 / 14</div>
   </section>
 
@@ -1528,14 +1537,15 @@
     lucide.createIcons();
   </script>
 
-  <!-- Sticky quote effect for insights - SIMPLIFIED -->
+  <!-- Sticky quote effect for insights - Figma-style transition FIXED -->
   <script>
     function initStickyQuote() {
       const sections = document.querySelectorAll('.sticky-quote-section');
 
       sections.forEach(section => {
         const wrapper = section.querySelector('.sticky-quote-wrapper');
-        const quote = section.querySelector('.sticky-quote');
+        const initialContent = section.querySelector('.initial-content');
+        const fullscreenQuote = section.querySelector('.fullscreen-quote');
 
         function updateQuote() {
           const sectionRect = section.getBoundingClientRect();
@@ -1545,14 +1555,19 @@
           // Calculate scroll progress through the section (0 to 1)
           const scrollProgress = Math.max(0, Math.min(1, -sectionRect.top / (sectionHeight - viewportHeight)));
 
-          // Scale grows from 1.0 to 1.2 as you scroll through
-          const scale = 1 + (scrollProgress * 0.2);
-          quote.style.transform = `scale(${scale})`;
+          // Fase 1 (0-40%): Contenido inicial visible (gráfico + takeaway card)
+          // Fase 2 (40-60%): Transición - fade out inicial, fade in fullscreen
+          // Fase 3 (60-85%): Fullscreen completo - fondo verde con texto
+          // Fase 4 (85-100%): Sale del fullscreen
 
-          // Activate fullscreen when scrolled halfway through (0.5)
-          if (scrollProgress > 0.4 && scrollProgress < 0.8) {
+          if (scrollProgress < 0.4) {
+            // Fase 1: Mostrar contenido inicial
+            wrapper.classList.remove('fullscreen');
+          } else if (scrollProgress >= 0.4 && scrollProgress < 0.85) {
+            // Fase 2 y 3: Fullscreen
             wrapper.classList.add('fullscreen');
           } else {
+            // Fase 4: Salida
             wrapper.classList.remove('fullscreen');
           }
         }
